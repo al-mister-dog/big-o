@@ -75,7 +75,7 @@ end
 ```
 This function has a time complexity of O(n) because its execution time increases linearly with the size of the input array. In other words, it has linear time complexity.
 
-### O(log) - Logarithmic Time
+### O(log n) - Logarithmic Time
 And algorithm with O(log n) time complexity has an execution time that increases logarithmically with the size of the input. Here's an example:
 ```javaScript
 //javascript
