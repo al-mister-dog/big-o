@@ -8,15 +8,23 @@ Here are some examples of common time complexities and the algorithms that have 
 ### O(1) - Constant Time
 An algorithm with O(1) time complexity has a constant execution time, regardless of the size of the input. Here’s an example:
 ```javascript
+//javascript
 function getFirstElement(arr) {
   return arr[0];
 }
+```
+```ruby
+#ruby
+def get_first_element(arr)
+  return arr[0]
+end
 ```
 This function returns the first element of an array. It has a constant execution time because it only performs one operation, regardless of the size of the input array.
 
 ### O(n) - Linear Time
 An algorithm with O(n) time complexity has an execution time that increases linearly with the size of the input. Here’s an example:
 ```javascript
+//javascript
 function sumArray(arr) {
   let sum = 0;
 
@@ -28,10 +36,70 @@ function sumArray(arr) {
 }
 ```
 This function sums all the elements in an array. It has a linear execution time because it performs one operation for each element in the input array.
+```ruby
+#ruby
+def find_element(arr, target)
+  arr.each do |element|
+    if element == target
+      return true
+    end
+  end
+
+  return false
+end
+```
+This function has a time complexity of O(n) because its execution time increases linearly with the size of the input array. In other words, it has linear time complexity.
+
+### O(log n) - Logarithmic Time
+And algorithm with O(log n) time complexity has an execution time that increases logarithmically with the size of the input. Here's an example:
+```javaScript
+//javascript
+function binarySearch(arr, target) {
+  let low = 0;
+  let high = arr.length - 1;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    if (arr[mid] === target) {
+      return true;
+    } else if (arr[mid] < target) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+
+  return false;
+}
+```
+```ruby
+#ruby
+def binary_search(arr, target)
+  low = 0
+  high = arr.length - 1
+
+  while low <= high
+    mid = (low + high) / 2
+
+    if arr[mid] == target
+      return true
+    elsif arr[mid] < target
+      low = mid + 1
+    else
+      high = mid - 1
+    end
+  end
+
+  return false
+end
+```
+Both of these algorithms have a time complexity of O(log n) because their execution time increases logarithmically with the size of the input array. In other words, they have logarithmic time complexity.
 
 ### O(n log n) - Log-Linear Time
 An algorithm with O(n log n) time complexity has an execution time that increases logarithmically with the size of the input. Here’s an example:
 ```javascript
+//javascript
 function mergeSort(arr) {
   if (arr.length <= 1) {
     return arr;
@@ -58,11 +126,51 @@ function merge(left, right) {
   return [...result, ...left, ...right];
 }
 ```
-This function sorts an array using the merge sort algorithm. It has a log-linear execution time because it divides the input array into smaller subarrays and then merges them back together. The number of operations required to merge two subarrays is proportional to their combined length, which is why this algorithm has a log-linear execution time.
+```ruby
+#ruby
+def merge_sort(arr)
+  if arr.length <= 1
+    return arr
+  end
+
+  mid = arr.length / 2
+  left = arr[0...mid]
+  right = arr[mid..-1]
+
+  left = merge_sort(left)
+  right = merge_sort(right)
+
+  return merge(left, right)
+end
+
+def merge(left, right)
+  result = []
+
+  while left.length > 0 && right.length > 0
+    if left[0] <= right[0]
+      result << left.shift
+    else
+      result << right.shift
+    end
+  end
+
+  while left.length > 0
+    result << left.shift
+  end
+
+  while right.length > 0
+    result << right.shift
+  end
+
+  return result
+end
+```
+Both of these algorithms have a time complexity of O(n log n) because their execution time increases proportionally to the size of the input array multiplied by the logarithm of the size of the input array. In other words, they have n log n time complexity.
 
 ### O(n^2) - Quadratic Time
 An algorithm with O(n^2) time complexity has an execution time that increases quadratically with the size of the input. Here’s an example:
 ```javascript
+//javascript
 function bubbleSort(arr) {
   const n = arr.length;
 
@@ -77,11 +185,34 @@ function bubbleSort(arr) {
   return arr;
 }
 ```
+```ruby
+#ruby
+def bubble_sort(arr)
+  n = arr.length
+
+  loop do
+    swapped = false
+
+    (n - 1).times do |i|
+      if arr[i] > arr[i + 1]
+        arr[i], arr[i + 1] = arr[i + 1], arr[i]
+        swapped = true
+      end
+    end
+
+    break unless swapped
+  end
+
+  return arr
+end
+```
+
 This function sorts an array using the bubble sort algorithm. It has a quadratic execution time because it compares each element in the input array to every other element in the array.
 
 ### O(n!) - Factorial Time
 An algorithm with O(n!) time complexity has an execution time that increases factorially with the size of the input. Here’s an example:
 ```javascript
+//javascript
 function permutation(str) {
   if (str.length === 1) {
     return [str];
@@ -101,4 +232,25 @@ function permutation(str) {
   return result;
 }
 ```
+```ruby
+#ruby
+def permutation(str)
+  if str.length == 1
+    return [str]
+  end
+
+  result = []
+
+  str.each_char.with_index do |char, index|
+    sub_permutations = permutation(str[0...index] + str[index + 1..-1])
+
+    sub_permutations.each do |sub_permutation|
+      result << char + sub_permutation
+    end
+  end
+
+  return result
+end
+```
+
 This function generates all possible permutations of a given string. It has a factorial execution time because there are n! possible permutations of a string of length n.
