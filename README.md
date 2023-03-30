@@ -2,6 +2,25 @@
 ## Introduction
 Big O notation is a way of describing the time complexity of an algorithm. It is used to describe how the execution time of an algorithm increases as the size of the input increases.
 
+## Functions
+**Constant function**: A function that always returns the same value, regardless of the input. For example, f(x) = 5 is a constant function.
+_f(x) = 5. No matter what value of x you plug in, the output will always be 5._
+
+**Linear function**: A function that has a constant rate of change. In other words, the output changes by a fixed amount for every unit increase in the input. 
+_f(x) = 2x + 1. If you plug in x = 0, the output will be 1. If you plug in x = 1, the output will be 3. If you plug in x = 2, the output will be 5. And so on._
+
+**Logarithmic function**: A function that has a logarithm in it. For example, f(x) = log(x) is a logarithmic function.
+_f(x) = log(x). If you plug in x = 1, the output will be 0. If you plug in x = 10, the output will be approximately 1. If you plug in x = 100, the output will be approximately 2. And so on._
+
+**Log-linear function**: A function that is the product of a logarithmic and a linear function. For example, f(x) = x log(x) is a log-linear function.
+_f(x) = x log(x). If you plug in x = 1, the output will be 0. If you plug in x = 10, the output will be approximately 23. If you plug in x = 100, the output will be approximately 460. And so on._
+
+**Quadratic function**: A function that has a squared term in it. For example, f(x) = x^2 + 2x + 1 is a quadratic function.
+_f(x) = x^2 + 2x + 1. If you plug in x = -1, the output will be 0. If you plug in x = 0, the output will be 1. If you plug in x = 1, the output will be 4. And so on._
+
+**Factorial function**: A function that multiplies all positive integers up to a given number. 
+_For example, 5! (read “5 factorial”) = 5 x 4 x 3 x 2 x 1 = 120._
+
 ## Examples
 Here are some examples of common time complexities and the algorithms that have those time complexities:
 
@@ -50,7 +69,7 @@ end
 ```
 This function has a time complexity of O(n) because its execution time increases linearly with the size of the input array. In other words, it has linear time complexity.
 
-### O(log n) - Logarithmic Time
+### O(log) - Logarithmic Time
 And algorithm with O(log n) time complexity has an execution time that increases logarithmically with the size of the input. Here's an example:
 ```javaScript
 //javascript
