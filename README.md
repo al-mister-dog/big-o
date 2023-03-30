@@ -31,7 +31,7 @@ _For example, 5! (read “5 factorial”) = 5 x 4 x 3 x 2 x 1 = 120._
 Here are some examples of common time complexities and the algorithms that have those time complexities:
 
 ### O(1) - Constant Time
-An algorithm with O(1) time complexity has a constant execution time, regardless of the size of the input. Here’s an example:
+An algorithm with O(1) time complexity has a constant execution time, regardless of the size of the input:
 ```javascript
 //javascript
 function getFirstElement(arr) {
@@ -47,7 +47,7 @@ end
 This function returns the first element of an array. It has a constant execution time because it only performs one operation, regardless of the size of the input array.
 
 ### O(n) - Linear Time
-An algorithm with O(n) time complexity has an execution time that increases linearly with the size of the input. Here’s an example:
+An algorithm with O(n) time complexity has an execution time that increases linearly with the size of the input:
 ```javascript
 //javascript
 function sumArray(arr) {
@@ -76,7 +76,7 @@ end
 This function has a time complexity of O(n) because its execution time increases linearly with the size of the input array. In other words, it has linear time complexity.
 
 ### O(log n) - Logarithmic Time
-And algorithm with O(log n) time complexity has an execution time that increases logarithmically with the size of the input. Here's an example:
+And algorithm with O(log n) time complexity has an execution time that increases logarithmically with the size of the input:
 ```javaScript
 //javascript
 function binarySearch(arr, target) {
@@ -122,7 +122,7 @@ end
 Both of these algorithms have a time complexity of O(log n) because their execution time increases logarithmically with the size of the input array. In other words, they have logarithmic time complexity.
 
 ### O(n log n) - Log-Linear Time
-An algorithm with O(n log n) time complexity has an execution time that increases logarithmically with the size of the input. Here’s an example:
+An algorithm with O(n log n) time complexity has an execution time that increases logarithmically with the size of the input:
 ```javascript
 //javascript
 function mergeSort(arr) {
@@ -193,7 +193,7 @@ end
 Both of these algorithms have a time complexity of O(n log n) because their execution time increases proportionally to the size of the input array multiplied by the logarithm of the size of the input array. In other words, they have n log n time complexity.
 
 ### O(n^2) - Quadratic Time
-An algorithm with O(n^2) time complexity has an execution time that increases quadratically with the size of the input. Here’s an example:
+An algorithm with O(n^2) time complexity has an execution time that increases quadratically with the size of the input:
 ```javascript
 //javascript
 function bubbleSort(arr) {
@@ -235,7 +235,7 @@ end
 This function sorts an array using the bubble sort algorithm. It has a quadratic execution time because it compares each element in the input array to every other element in the array.
 
 ### O(n!) - Factorial Time
-An algorithm with O(n!) time complexity has an execution time that increases factorially with the size of the input. Here’s an example:
+An algorithm with O(n!) time complexity has an execution time that increases factorially with the size of the input:
 ```javascript
 //javascript
 function permutation(str) {
